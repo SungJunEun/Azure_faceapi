@@ -25,7 +25,8 @@ ENDPOINT = os.environ['FACE_ENDPOINT']
 face_client = FaceClient(ENDPOINT, CognitiveServicesCredentials(KEY))
 
 
-# Detect a face in an image that contains a single face
+# Detect a face in an image that contains a single face (단일 얼굴 인식)
+
 single_face_image_url = 'https://www.biography.com/.image/t_share/MTQ1MzAyNzYzOTgxNTE0NTEz/john-f-kennedy---mini-biography.jpg'
 single_image_name = os.path.basename(single_face_image_url)
 detected_faces = face_client.face.detect_with_url(url=single_face_image_url)

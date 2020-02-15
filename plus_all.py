@@ -56,7 +56,7 @@ try:
     #container_client = blob_service_client.create_container(container_name,)
 
     # Create a file in local Documents directory to upload and download
-    local_path = "C:/Users/kkang/Documents/GitHub/faceapi/images"
+    local_path = "C:/Users/kkang/Documents/GitHub/faceapi/images"  #use your local path
     images = glob.glob(local_path+'/*.jpg') #bring all jpg files in the folder
     for i in images:
         number = re.sub('[^0-9]', '', i)
@@ -72,7 +72,7 @@ try:
         with open(upload_file_path, "rb") as data:
             blob_client.upload_blob(data)
 
-        image_url = 'https://qfqewfegqe.blob.core.windows.net/abcd/C:/Users/kkang/Documents/GitHub/faceapi/images/%d.jpg'%number
+        image_url = 'https://qfqewfegqe.blob.core.windows.net/abcd/C:/Users/kkang/Documents/GitHub/faceapi/images/%d.jpg'%number  # my azure storage folder path
 
         headers = {'Ocp-Apim-Subscription-Key': subscription_key}
 

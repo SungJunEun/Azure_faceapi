@@ -7,7 +7,8 @@ import json
 import numpy as np
 import os
 import re
-
+fcount = 0
+mcount = 0
 # set to your own subscription key value
 subscription_key = 'ad8433203b0a44aa803094e2eb780b21'
 assert subscription_key
@@ -85,7 +86,16 @@ try:
                     headers=headers, json={"url": image_url})
         ram = response.json()
         print(ram)
-        print(ram[0]['faceAttributes']['age'])
+        genderjudge = ram[0]['faceAttributes']['gender']
+        if genderjudge == "female":
+            fcount+=1
+        else:
+            mcount+=1
+
+    if fcount > mcount:
+        print("Person's gender is female")
+    else:
+        print("Person's gender is male")
 
 except Exception as ex:
     print('Exception:')

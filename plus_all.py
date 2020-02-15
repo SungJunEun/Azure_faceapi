@@ -78,13 +78,14 @@ try:
         params = {
         'returnFaceId': 'true',
         'returnFaceLandmarks': 'false',
-        'returnFaceAttributes': 'age,gender,headPose,smile,facialHair,glasses,emotion,hair,makeup,occlusion,accessories,blur,exposure,noise',
+        'returnFaceAttributes': 'age,gender,headPose,smile,facialHair,glasses,emotion,hair,makeup,occlusion,accessories,blur,exposure,noise'
         }
-
+        #'returnFaceAttributes': 'age,gender,headPose,smile,facialHair,glasses,emotion,hair,makeup,occlusion,accessories,blur,exposure,noise'
         response = requests.post(face_api_url, params=params,
                     headers=headers, json={"url": image_url})
-        print(json.dumps(response.json()))
-
+        ram = response.json()
+        print(ram)
+        print(ram[0]['faceAttributes']['age'])
 
 except Exception as ex:
     print('Exception:')

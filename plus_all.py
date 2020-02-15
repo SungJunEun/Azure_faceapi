@@ -10,11 +10,11 @@ import re
 fcount = 0
 mcount = 0
 # set to your own subscription key value
-subscription_key = 'ad8433203b0a44aa803094e2eb780b21'
+subscription_key = "your face api key"
 assert subscription_key
 
 # replace <My Endpoint String> with the string from your endpoint URL
-face_api_url = 'https://kpmgfaceapi.cognitiveservices.azure.com/face/v1.0/detect'
+face_api_url =  <My Endpoint String>
 
 
 vid = cv2.VideoCapture('C:/Users/kkang/Documents/GitHub/faceapi/test.mp4')

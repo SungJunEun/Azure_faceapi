@@ -86,6 +86,8 @@ try:
                     headers=headers, json={"url": image_url})
         ram = response.json()
         print(ram)
+
+        # judge gender based on many frames
         genderjudge = ram[0]['faceAttributes']['gender']
         if genderjudge == "female":
             fcount+=1
@@ -96,6 +98,7 @@ try:
         print("Person's gender is female")
     else:
         print("Person's gender is male")
+
 
 except Exception as ex:
     print('Exception:')
